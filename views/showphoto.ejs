@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+
+<div class="ui container"> 
+       <form action="/searched" method="GET">
+           
+        <h1>Favorite movies</h1>
+
+        <input type="text" placeholder="movie title" name="searched">
+        
+        <button class="">Search</button>
+           
+       </form>
+      
+
+
+<br>
+<h3>Favorite Movies</h3>
+
+<form action="/delete" method="GET">
+    <button>Clear</button>
+</form> 
+  <ul>
+   <%movies.forEach(function(movie){%>
+        <form action="/showphoto" method="GET">
+                    <li><%=movie.title%></li>
+                           <button>Show Image</button>
+                 </form>
+        
+   <%})%>
+   
+  
+</ul>
+
+
+</div>
+
+
+
+
+
+<% include ../partials/footer %>

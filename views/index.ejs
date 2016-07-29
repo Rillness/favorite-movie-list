@@ -1,0 +1,53 @@
+<% include ../partials/header %>
+
+<div class="ui container"> 
+       <form action="/searched" method="GET">
+           <br>
+        <h1>Favorite movies</h1>
+        
+        <div class="ui search">
+  <div class="ui icon input">
+    <input class="prompt" type="text" placeholder="Enter a movie title." name="searched" size="40">
+    <i class="search icon"></i>
+  </div>
+  <div class="results"></div>
+</div>
+       <br>
+        <button class="small ui inverted blue button" style="margin-left : 10px">Search</button>
+           
+       </form>
+      
+
+
+<br>
+<h3>Favorite Movies</h3>
+
+<form action="/delete" method="GET">
+    <button class="mini ui inverted red button">Clear</button>
+</form> 
+  <ul>
+   <%movies.forEach(function(movie){%>
+        <form action="" method="GET">
+     
+         <li style="font-size : 20px" class="item"><%=movie.title%> <a href="/deleteid/<%=movie._id%>"><i class="delete icon"></i> </a> </li>
+         
+ 
+
+
+                
+                    
+                 </form>
+        
+   <%})%>
+   
+  
+</ul>
+
+
+</div>
+
+
+
+
+
+<% include ../partials/footer %>

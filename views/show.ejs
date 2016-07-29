@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+   
+   <div class="container" style="margin-left : 2em">
+       
+       <br>
+       
+       <form action="/">
+    <button class="ui button">Go Back</button>
+</form>
+
+<h2>Results for : <%= title %></h2>
+    <div>
+        
+          <ul style="margin-left : 6em">
+          
+    <%movies.Search.forEach(function(movie){%>
+
+
+<form action="/movies/<%= movie.Title %>" method="POST">
+
+  <h3><%=movie.Title %></h3> 
+  
+  
+<img src="<%= movie.Poster %>" class="ui medium bordered image">
+<br>
+ <button class="ui primary button">Save</button>
+       </form>
+        <%});%>
+</ul>
+    
+       
+    </div>
+  
+           
+   </div>
+   
+   
+
+<% include ../partials/footer %>
